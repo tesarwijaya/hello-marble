@@ -1,0 +1,24 @@
+version: "2"
+
+services:
+  hello-marble:
+    image: hello-marble
+    build:
+      context: .
+      dockerfile: dockerfiles/app.docker
+    container_name: "hello-marble"
+    command: yarn dev
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "1337:1337"
+    networks:
+      - default
+      - bridge-network
+networks:
+  default:
+    driver: bridge
+  bridge-network:
+    external: true
