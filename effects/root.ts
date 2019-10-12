@@ -1,9 +1,12 @@
-import { r } from '@marblejs/core';
-import { mapTo } from 'rxjs/operators';
+import { r } from '@marblejs/core'
+import { mapTo } from 'rxjs/operators'
 
-export const root$ = r.pipe(
+const root$ = r.pipe(
   r.matchPath('/'),
   r.matchType('GET'),
   r.useEffect(req$ => req$.pipe(
-    mapTo({ body: { message: 'Hello, world!!' }}),
-  )));
+    mapTo({ body: { message: 'Hello, world!!' } }),
+  )),
+)
+
+export default root$
