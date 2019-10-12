@@ -17,5 +17,12 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpileOnly server.ts",
     "start": "ts-node server.ts"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-typescript": "^5.0.0",
+    "eslint-plugin-import": "^2.18.2"
   }
 }
